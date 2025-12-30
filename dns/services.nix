@@ -36,7 +36,7 @@
       alwaysKeepRunning = true;
       settings = {
         server = [ "1.1.1.1" ];
-        address = [ "/.v34l.com/192.168.3.1" ];
+        address = [ "/.v34l.com/192.168.3.1" "/.jg1g.com/192.168.1.5" ];
       };
     };
   };
