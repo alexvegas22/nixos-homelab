@@ -38,35 +38,30 @@
       layout = "us";
       variant = "intl";
     };
+    
     nginx = {
       enable = true;
-      config = ''
-server {
-    listen 80;
-    server_name *.v34l.com;
-
-    location / {
-        proxy_pass http://192.168.3.1;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-
-server {
-    listen 80;
-    server_name *.jg1g.com;
-
-    location / {
-        proxy_pass http://192.168.1.5;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-'';
+      virtualHosts = {
+        "v34l.com" = {
+          # enableACME = true;
+          # forceSSL = true;
+          locations."/" = {
+            proxyPass = "https://192.168.3.1";
+            proxyWebsockets = true;
+            # extraConfig = "proxy_ssl_server_name on;" + "proxy_pass_header Authorization;"
+          };
+        };
+        
+        "jg1g.com" = {
+          # enableACME = true;
+          # forceSSL = true;
+          locations."/" = {
+            proxyPass = "https://192.168.1.5";
+            proxyWebsockets = true;
+            # extraConfig = "proxy_ssl_server_name on;" + "proxy_pass_header Authorization;"
+          };
+        };
+      };
     };
     openssh.enable = true;
     dnsmasq = {
