@@ -31,7 +31,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ wget vim emacs dig	];
+  environment.systemPackages = with pkgs; [ wget vim emacs dig git];
 
   services = {
     xserver.xkb = {
