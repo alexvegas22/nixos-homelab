@@ -38,8 +38,8 @@
 
 
   networking.firewall = {
-    allowedUDPPorts = [ 53 ];
-    allowedTCPPorts = [ 22 53 ];
+    allowedUDPPorts = [ 53 80 443 ];
+    allowedTCPPorts = [ 22 53 80 443 ];
   };
 
   system.stateVersion = "24.05"; # Did you read the comment?
