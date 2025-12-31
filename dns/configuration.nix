@@ -44,9 +44,9 @@
   security.acme = {
     acceptTerms = true;
     certs = {
-      "v34l.com" = {
-        email = "v34l@proton.me";
-      };
+      # "v34l.com" = {
+      #   email = "v34l@proton.me";
+      # };
 
       "jg1g.com" = {
         email = "v34l@proton.me";
