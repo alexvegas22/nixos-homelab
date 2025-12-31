@@ -45,11 +45,11 @@
     acceptTerms = true;
     certs = {
       "v34l.com" = {
-        email = "your-email@example.com"; # Replace with your email
+        email = "v34l@proton.me";
       };
 
       "jg1g.com" = {
-        email = "your-email@example.com"; # Replace with your email
+        email = "v34l@proton.me";
       };
     };
   };
