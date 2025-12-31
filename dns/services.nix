@@ -16,12 +16,6 @@
       default 192.168.3.1:443;
     }
 
-    map $ssl_preread_server_name $backend-80 {
-      v34l.com 192.168.3.1:443;
-      jg1g.com 192.168.1.5:443;
-      default 192.168.3.1:443;
-    }
-
     server {
       listen 443;
       proxy_pass $backend;
@@ -30,7 +24,7 @@
 
     server {
       listen 80;
-      proxy_pass $backend-80;
+      proxy_pass $backend;
       ssl_preread on;
     }
   '';
