@@ -7,7 +7,7 @@
     };
 
     nginx = {
-      enable = true;
+      enable = false;
       virtualHosts = {
         "v34l.com" = {
           # enableACME = true;
