@@ -33,7 +33,7 @@
 
     openssh.enable = true;
     dnsmasq = {
-      enable = false;
+      enable = true;
       alwaysKeepRunning = true;
       settings = {
         server = [ "1.1.1.1" ];
