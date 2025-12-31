@@ -41,18 +41,5 @@
     allowedTCPPorts = [ 22 53 80 443 ];
   };
 
-  security.acme = {
-    acceptTerms = true;
-    certs = {
-      # "v34l.com" = {
-      #   email = "v34l@proton.me";
-      # };
-
-      "jg1g.com" = {
-        email = "v34l@proton.me";
-      };
-    };
-  };
-
   system.stateVersion = "24.05"; # Did you read the comment?
 }

@@ -9,52 +9,37 @@
     nginx = {
       enable = true;
 
-      # virtualHosts = {
-      #   "v34l.com" = {
-      #     enableACME = true;
-      #     forceSSL = true;
+      streamConfig = ''
+    map $ssl_preread_server_name $backend {
+      v34l.com 192.168.3.1:443;
+      jg1g.com 192.168.1.5:443;
+      default 192.168.3.1:443;
+    }
 
-      #     locations."/" = {
-      #       proxyPass = "https://192.168.3.1";
-      #       proxyWebsockets = true;
+    map $ssl_preread_server_name $backend-80 {
+      v34l.com 192.168.3.1:443;
+      jg1g.com 192.168.1.5:443;
+      default 192.168.3.1:443;
+    }
 
-      #       extraConfig = ''
-      #     proxy_set_header Host $host;
-      #     proxy_set_header X-Forwarded-Proto https;
-      #     proxy_set_header X-Forwarded-For $remote_addr;
+    server {
+      listen 443;
+      proxy_pass $backend;
+      ssl_preread on;
+    }
 
-      #     proxy_ssl_server_name on;
-      #     proxy_ssl_name v34l.com;
-      #     proxy_ssl_verify off;
-      #   '';
-      #     };
-      #   };
-
-        "jg1g.com" = {
-          enableACME = true;
-          forceSSL = true;
-
-          locations."/" = {
-            proxyPass = "https://192.168.1.5";
-            proxyWebsockets = true;
-
-            extraConfig = ''
-          proxy_set_header Host $host;
-          proxy_set_header X-Forwarded-Proto https;
-          proxy_set_header X-Forwarded-For $remote_addr;
-
-          proxy_ssl_server_name on;
-          proxy_ssl_name jg1g.com;
-          proxy_ssl_verify off;
-        '';
-          };
-        };
-      };
+    server {
+      listen 80;
+      proxy_pass $backend-80;
+      ssl_preread on;
+    }
+  '';
     };
+
 
     openssh.enable = true;
     dnsmasq = {
-      enable = true;
+      enable = false;
       alwaysKeepRunning = true;
       settings = {
         server = [ "1.1.1.1" ];
