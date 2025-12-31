@@ -15,7 +15,7 @@
           locations."/" = {
             proxyPass = "https://192.168.3.1";
             proxyWebsockets = true;
-            # extraConfig = "proxy_ssl_server_name on;" + "proxy_pass_header Authorization;"
+            extraConfig = "proxy_ssl_server_name on;" + "proxy_pass_header Authorization;"
           };
         };
 
@@ -25,7 +25,7 @@
           locations."/" = {
             proxyPass = "https://192.168.1.5";
             proxyWebsockets = true;
-            # extraConfig = "proxy_ssl_server_name on;" + "proxy_pass_header Authorization;"
+            extraConfig = "proxy_ssl_server_name on;" + "proxy_pass_header Authorization;"
           };
         };
       };
