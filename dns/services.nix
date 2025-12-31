@@ -11,7 +11,9 @@
 
       streamConfig = ''
     map $ssl_preread_server_name $backend {
+      ~^(.+)\.v34l\.com 192.168.3.1:443;  # Matches any subdomain of v34l.com
       v34l.com 192.168.3.1:443;
+      ~^(.+)\.jg1g\.com 192.168.1.5:443;  # Matches any subdomain of jg1g.com
       jg1g.com 192.168.1.5:443;
     }
 
@@ -28,7 +30,6 @@
     }
   '';
     };
-
 
     openssh.enable = true;
     dnsmasq = {
