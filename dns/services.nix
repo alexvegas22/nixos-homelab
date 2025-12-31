@@ -13,7 +13,6 @@
     map $ssl_preread_server_name $backend {
       v34l.com 192.168.3.1:443;
       jg1g.com 192.168.1.5:443;
-      default 192.168.3.1:443;
     }
 
     server {
