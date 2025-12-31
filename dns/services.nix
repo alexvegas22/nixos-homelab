@@ -10,8 +10,8 @@
       enable = true;
       virtualHosts = {
         "v34l.com" = {
-          # enableACME = true;
-          # forceSSL = true;
+          enableACME = true;
+          forceSSL = true;
           locations."/" = {
             proxyPass = "https://192.168.3.1";
             proxyWebsockets = true;
@@ -20,8 +20,8 @@
         };
 
         "jg1g.com" = {
-          # enableACME = true;
-          # forceSSL = true;
+          enableACME = true;
+          forceSSL = true;
           locations."/" = {
             proxyPass = "https://192.168.1.5";
             proxyWebsockets = true;

@@ -36,10 +36,22 @@
 
   environment.systemPackages = with pkgs; [ wget vim emacs dig git];
 
-
   networking.firewall = {
     allowedUDPPorts = [ 53 80 443 ];
     allowedTCPPorts = [ 22 53 80 443 ];
+  };
+
+  security.acme = {
+    acceptTerms = true;
+    certs = {
+      "v34l.com" = {
+        email = "your-email@example.com"; # Replace with your email
+      };
+
+      "jg1g.com" = {
+        email = "your-email@example.com"; # Replace with your email
+      };
+    };
   };
 
   system.stateVersion = "24.05"; # Did you read the comment?
