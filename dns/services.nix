@@ -5,7 +5,7 @@
       layout = "us";
       variant = "intl";
     };
-
+    avahi.enable = true;
     nginx = {
       enable = true;
 
@@ -36,6 +36,15 @@
       enable = true;
       alwaysKeepRunning = true;
       settings = {
+        listen-address = [
+          "127.0.0.1"
+          "192.168.2.51"
+          "10.100.0.1"
+        ];
+
+        bind-interfaces = true;
+        local-service = false;
+        interface = [ "ens18" "wg0" ];
         server = [ "1.1.1.1" ];
         address = [
           "/home.v34l.com/192.168.2.52"
