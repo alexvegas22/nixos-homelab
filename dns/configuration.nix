@@ -10,7 +10,10 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
-  nix.settings.trusted-users = [ "%wheel" ];
+  nix.settings = {
+    trusted-users = [ "%wheel" ];
+    experimental-features = [ "nix-command" "flakes" ];
+  };
   time.timeZone = "America/Toronto";
 
   i18n.defaultLocale = "en_CA.UTF-8";
