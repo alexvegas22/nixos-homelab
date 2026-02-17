@@ -1,0 +1,3 @@
+[submodule "k8s"]
+	path = k8s
+	url = git@github.com:alexvegas22/k8s-home.git
