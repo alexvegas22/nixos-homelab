@@ -24,6 +24,12 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  users.users.serv = {
+    isNormalUser = true;
+    description = "serv";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [ wget vim emacs dig git];
