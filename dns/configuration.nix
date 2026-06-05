@@ -18,12 +18,6 @@
 
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  users.users.vm = {
-    isNormalUser = true;
-    description = "vm";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-
   users.users.serv = {
     isNormalUser = true;
     description = "serv";
@@ -32,7 +26,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ wget vim emacs dig git];
+  environment.systemPackages = with pkgs; [ wget vim emacs dig git wireguard-tools];
 
   system.stateVersion = "24.05"; # Did you read the comment?
 }
