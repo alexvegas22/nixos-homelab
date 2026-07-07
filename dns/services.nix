@@ -1,6 +1,16 @@
 { config, pkgs, ... }:
 {
   services = {
+    factorio = {
+      enable = true;
+      description = "Veal's factorio server";
+      openFirewall = true;
+      lan = true;
+      game-name = "Veal's World";
+      admins = [ "veal" ];
+      port = 34197;
+    };
+
     xserver.xkb = {
       layout = "us";
       variant = "intl";

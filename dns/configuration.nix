@@ -13,6 +13,7 @@
   nix.settings = {
     trusted-users = [ "%wheel" ];
     experimental-features = [ "nix-command" "flakes" ];
+    require-sigs = false;
   };
   time.timeZone = "America/Toronto";
 
