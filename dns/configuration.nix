@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, nixpkgs, ... }:
 
 {
   imports = [
@@ -26,8 +26,9 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-  environment.systemPackages = with pkgs; [ wget vim emacs dig git wireguard-tools ];
+  environment.systemPackages = with nixpkgs; [ wget vim emacs dig git wireguard-tools ];
 
   system.stateVersion = "24.05"; # Did you read the comment?
 }
