@@ -10,7 +10,7 @@
     }];
 
     defaultGateway = {
-      address = "192.168.0.1";
+      address = "192.168.2.1";
       interface = "ens18";
     };
 
