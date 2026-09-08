@@ -6,7 +6,7 @@
     networkmanager.enable = false;
     interfaces.ens18.ipv4.addresses = [{
       address = "192.168.2.51";
-      prefixLength = 22;
+      prefixLength = 24;
     }];
 
     defaultGateway = {
@@ -40,7 +40,7 @@
 
         peers = [
           {
-            publicKey = "utepZiXZv6WKhzNibICH6HWQoHtAC6h1HhUkr5mcjXg=";
+            publicKey = "dPL1mA0DGASZErmo5JpovNSWKgiIpPF9UtNGwoAzdD8=";
             allowedIPs = [ "10.100.0.2/32" ];
           }
           {
