@@ -42,10 +42,12 @@
           {
             publicKey = "dPL1mA0DGASZErmo5JpovNSWKgiIpPF9UtNGwoAzdD8=";
             allowedIPs = [ "10.100.0.2/32" ];
+            persistentKeepalive = 25;
           }
           {
             publicKey = "U3HTKywUedDIn7mUhOvxxOnHl63+JUoLTEY0iWpXDyg=";
             allowedIPs = [ "10.100.0.3/32" ];
+            persistentKeepalive = 25;
           }
         ];
       };
