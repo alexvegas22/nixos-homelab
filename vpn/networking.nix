@@ -23,12 +23,32 @@
 
     firewall = {
       checkReversePath = "loose";
-      allowedUDPPorts = [ 53 80 443 51820 ];
-      allowedTCPPorts = [ 22 53 80 443 ];
+      allowedUDPPorts = [
+        53
+        80
+        443
+        51820
+      ];
+      allowedTCPPorts = [
+        22
+        53
+        80
+        443
+
+      ];
 
       interfaces.wg0 = {
-        allowedUDPPorts = [ 22 ];
-        allowedTCPPorts = [ 22 ];
+        allowedUDPPorts = [
+          22
+          4444 # default i2p http proxy port
+          4447 # default i2p socks proxy port
+        ];
+        allowedTCPPorts = [
+          22
+          4444 # default http proxy port
+          4447 # default socks proxy port
+          7070 # default web interface port
+        ];
       };
     };
 
