@@ -34,20 +34,14 @@
         53
         80
         443
-
       ];
 
       interfaces.wg0 = {
-        allowedUDPPorts = [
+        allowedTCPPorts = [
           22
           4444 # default i2p http proxy port
           4447 # default i2p socks proxy port
-        ];
-        allowedTCPPorts = [
-          22
-          4444 # default http proxy port
-          4447 # default socks proxy port
-          7070 # default web interface port
+          7070 # default i2p web console port
         ];
       };
     };

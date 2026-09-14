@@ -48,12 +48,23 @@
       address = "0.0.0.0";
       ifname = "wg0";
       port = 10110;
-      ntcp2.port = 10112 ;
+      ntcp2.port = 10112;
       proto = {
-        http.enable = true;
-        socksProxy.enable = true;
-        httpProxy.enable = true;
-        sam.enable = true;
+        http = {
+          enable = true;
+          address = "0.0.0.0";
+        };
+        socksProxy = {
+          enable = true;
+          address = "0.0.0.0";
+        };
+        httpProxy = {
+          enable = true;
+          address = "0.0.0.0";
+        };
+        sam = {
+          enable = true;
+        };
       };
     };
 
