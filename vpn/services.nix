@@ -46,7 +46,7 @@
     i2pd = {
       enable = true;
       address = "0.0.0.0";
-      ifname = "wg0";
+      ifname = "ens18";
       port = 10110;
       ntcp2.port = 10112;
       proto = {
