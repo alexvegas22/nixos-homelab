@@ -27,7 +27,16 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ wget vim emacs dig git wireguard-tools ];
+  environment.systemPackages = with pkgs; [
+    wget
+    vim
+    emacs
+    dig
+    git
+    wireguard-tools
+    go
+    opencode
+  ];
 
   system.stateVersion = "24.05"; # Did you read the comment?
 }
